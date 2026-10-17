@@ -1,0 +1,320 @@
+body {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  font-family: "Open Sans", "Segoe UI", sans-serif;
+  font-size: 20px;   
+  color: #1b1b1b;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+header > a:first-of-type {
+  position: absolute;
+  left: 3px;
+  top: -65px;
+  z-index: 100;
+  padding: 8px 1px;
+  background: #ffcb05;
+  color: #00274c;
+  font-weight: 800;
+}
+
+header > a:first-of-type:focus {
+  top: 8px;
+}
+
+header img {
+  width: 145px;
+  max-width: 80%;
+  padding: 5px;
+  height: auto;
+  margin: 0 auto;
+}
+
+header h1 {
+  padding: 30px 20px;
+}
+
+h1, h2, h3 {
+  font-family: "Open Sans", "Segoe UI", sans-serif;
+  color: #00274c;
+}
+
+h1 { 
+  font-size: 30px; 
+  font-weight: 800; 
+}
+
+h2 { 
+  font-size: 25px;  
+  font-weight: 800; 
+}
+
+h3 { 
+  font-size: 20px; 
+  font-weight: 800; 
+}
+
+nav {
+  background: #00274c;
+}
+
+nav ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+nav a {
+  display: grid;
+  place-items: center;
+  min-height: 45px;           
+  padding: 15px 10px;
+  background: #00274c;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 4px solid white;
+}
+
+nav a:hover {
+  background:#ffcb05;
+  color: #00274c;
+}
+
+nav a:focus {
+  outline: 5px solid #ffcb05;
+  outline-offset: -5px;
+}
+
+main {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+main section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
+  column-gap: 20px;
+  row-gap: 24px;
+  margin-block: 40px;
+  align-items: start;
+  gap: 50px;
+}
+
+main section > h2, main section > p, main section > img,
+main section > iframe, main section > ul, main section > ol,
+main section > section, main section > aside {
+  grid-column: 1 / -1;
+}
+
+main section section {
+  margin-block: 24px;
+}
+
+main section > h2 {
+  padding-bottom: 8px;
+  border-bottom: 5px solid #ffcb05;
+}
+
+main img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;                
+}
+
+a {
+  color: #00274c;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  text-decoration-thickness: 2px;
+}
+
+a:hover {
+  background: #ffcb05;
+}
+
+a:focus,
+iframe:focus{
+  outline: 2px solid #00274c;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px #ffcb05;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+main ul,
+main ol {
+  padding-left: 24px;
+}
+
+main li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+  
+main section > ul:not(article ul) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 16px;
+  padding-left: 2px;
+  list-style: none;
+}
+
+  main section > ul:not(article ul) > li {
+  margin: 0;
+  padding: 16px;
+  border: 7px solid #ffcb05;
+}
+
+main li a {
+  display: inline-block;
+  padding-block: 5px;
+}
+
+article {
+  height: 100%;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 9px;
+  border: 7px solid #ffcb05;
+}
+
+article h3 { 
+  margin-bottom: 8px;
+}
+
+main section > article:has(ul, ol) {
+  grid-column: 1 / -1;
+}
+
+article > a {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 10px 16px;
+  background: #00274c;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+article > a:hover {
+  background: #ffcb05;
+  color: #00274c;
+}
+
+article h3 a {
+  display: inline-block;
+  padding-block: 5px;
+}
+
+aside {
+  display: grid;
+  gap: 16px;
+  padding: 25px 16px;
+  border: 5px #00274c solid;
+  color: #00274c;
+}
+
+aside h2 {
+  color: #00274c;
+  border-bottom: 5px solid #ffcb05;
+  padding-bottom: 8px;
+}
+
+aside p { 
+  margin: 10px; 
+}
+
+aside div a {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 5px solid #ffcb05;
+  color: #00274c;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+  
+aside div a:hover {
+  background: #ffcb05;
+}
+
+aside a {
+  color: #00274c;
+  font-weight: bold; 
+}
+
+aside a:hover {
+  color: #00274c;
+}
+
+aside a:focus {
+  outline-color: white;
+}
+  
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 16px;
+  margin-top: 40px;
+  padding: 24px  16px;
+  background: #00274c;
+  color: white;
+  font-size: 16px;
+}
+
+footer p { 
+  margin: 0; 
+}
+
+footer address {
+  font-style: normal;
+}
+
+footer a {
+  display: inline-block;
+  padding-block: 5px;
+  padding: 3px;
+  color: #ffcb05;
+}
+
+footer a:hover {
+  background:#ffcb05;
+  color: #00274c;
+}
+
+footer a:focus {
+  outline-color: white;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { 
+    scroll-behavior: auto; 
+  }
+  * { 
+    transition: none !important; 
+    animation: none !important; 
+  }
+}
+
