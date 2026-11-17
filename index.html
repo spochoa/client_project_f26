@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/html5reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Engaged Learning Resources | UMSI</title>
+    <title>Welcome to the UMSI Engaged Learning Office| UMSI Engaged Learning</title>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
         <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
         <nav>
             <ul>
-                <li><a href = "index.html">Home</a></li>
+                <li><a href = "index.html" aria-current="page">Home</a></li>
                 <li><a href = "prep.html">Preparing for Your Experience</a></li>
                 <li><a href = "starting.html">Starting the Experience</a></li>
                 <li><a href = "ending.html">Ending the Experience</a></li>
@@ -48,7 +48,54 @@
     </ul>
 </section>
 
- <section>
+<!--javascript part-->
+<section class="stage-finder">
+  <h2>Find Your Next Step</h2>
+
+  <p>Not sure where to start? Select the stage of your engaged learning experience to find resources that are right for you. </p>
+
+  <div class="stage-finder-content">
+      <label for="project-stage"> Where are you in your project? </label>
+      <select id="project-stage">
+          <option value="">-- Select your stage --</option>
+          <option value="prep">I'm preparing for my experience</option>
+          <option value="starting">I'm starting my project</option>
+          <option value="ending">I'm wrapping up my project</option>
+      </select>
+
+      <div id="stage-result" aria-live="polite">
+          <p>Select an option above to see your recommendation.</p>
+      </div>
+  </div>
+  <script>
+    const projectStage = document.getElementById("project-stage");
+    const stageResult = document.getElementById("stage-result");
+    
+    projectStage.addEventListener("change", function() {
+        const selectedStage = projectStage.value;
+        if (selectedStage === "prep") {
+            stageResult.innerHTML = `<h3>Preparing for Your Experience</h3>
+                <p> Get ready by setting learning goals, understanding project expectations, and preparing to work with your team. </p>
+                <a href="prep.html">Explore Preparing Resources</a>`;
+        }
+        else if (selectedStage === "starting") {
+            stageResult.innerHTML = `<h3>Starting the Experience</h3>
+                <p> Find resources for your first meetings, client communication, and establishing clear project expectations. </p>
+                <a href="starting.html">Explore Starting Resources</a> `;
+        }
+        else if (selectedStage === "ending") {
+            stageResult.innerHTML = `<h3>Ending the Experience</h3>
+                <p> Learn how to reflect on your experience, wrap up your project, and communicate the skills you've gained. </p>
+                <a href="ending.html">Explore Ending Resources</a> `;
+        }
+        else {
+            stageResult.innerHTML = `<p>Select an option above to see your recommendation.</p> `;
+        }
+    });
+    </script>
+</section>
+
+<section>
     <h2>Guidance for Every Stage</h2>
     <p>Engaged learning projects can change as new needs, constraints, and insights emerge. Find guidance for the stage of work you are navigating <strong>now.</strong></p>
     <article>
@@ -122,9 +169,15 @@
         UMGPT. (2026). UMGPT ( GPT-5.6 Sol September 7th version) [Large language model]. -->
     </main>
     <footer>
-        <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">Engaged Learning Office </a></p>
-  
-      <p>&copy; 2026 Regents of the University of Michigan</p>
+      <p>University of Michigan School of Information | <a href="https://www.si.umich.edu/programs/engaged-learning/about-engaged-learning-office">Engaged Learning Office </a></p>
+      <address>
+        <a href="mailto:umsi.engagement@umich.edu"> umsi.engagement@umich.edu</a>
+      </address>
+      <p>&copy; <span id="year"></span> Regents of the University of Michigan</p>
+      <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
     </footer>
 </body>
+
 </html>
