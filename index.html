@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <header>
+<header>
   <a href = "#main">Skip to Main Content</a>
         <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
         <nav>
@@ -25,6 +25,25 @@
 
     </header>
     <main id="main">
+      <!-- Reading Preferences -->
+      <div class="reading-preferences">
+        <h2>Reading Preferences</h2>
+        <p>Choose a background color for a comfortable reading experience.</p>
+
+        <div class="color-buttons">
+            <button type="button" onclick="changeBackground('#ffffff')">
+                White
+            </button>
+
+            <button type="button" onclick="changeBackground('#fff4d5')">
+                Soft Cream
+            </button>
+
+            <button type="button" onclick="changeBackground('#e8edf2')">
+                Light Gray
+            </button>
+        </div>
+      </div>
     <section>
       <h2>Build Skills. Work with Partners. Have an Impact.</h2>
       <p>The UMSI Engaged Learning Office connects students with opportunities to apply classroom knowledge to real challenges. Use this site to prepare for your experience, manage your work, and reflect on what you learned.
@@ -46,53 +65,6 @@
         <li><strong>Build professional skills:</strong> Strengthen your communication, teamwork, project management, and ethical decision-making.</li>
         <li><strong>Turn experience into evidence:</strong> Identify what you learned and communicate your impact in resumes,portfolios, and interviews.</li>
     </ul>
-</section>
-
-<!--javascript part-->
-<section class="stage-finder">
-  <h2>Find Your Next Step</h2>
-
-  <p>Not sure where to start? Select the stage of your engaged learning experience to find resources that are right for you. </p>
-
-  <div class="stage-finder-content">
-      <label for="project-stage"> Where are you in your project? </label>
-      <select id="project-stage">
-          <option value="">-- Select your stage --</option>
-          <option value="prep">I'm preparing for my experience</option>
-          <option value="starting">I'm starting my project</option>
-          <option value="ending">I'm wrapping up my project</option>
-      </select>
-
-      <div id="stage-result" aria-live="polite">
-          <p>Select an option above to see your recommendation.</p>
-      </div>
-  </div>
-  <script>
-    const projectStage = document.getElementById("project-stage");
-    const stageResult = document.getElementById("stage-result");
-    
-    projectStage.addEventListener("change", function() {
-        const selectedStage = projectStage.value;
-        if (selectedStage === "prep") {
-            stageResult.innerHTML = `<h3>Preparing for Your Experience</h3>
-                <p> Get ready by setting learning goals, understanding project expectations, and preparing to work with your team. </p>
-                <a href="prep.html">Explore Preparing Resources</a>`;
-        }
-        else if (selectedStage === "starting") {
-            stageResult.innerHTML = `<h3>Starting the Experience</h3>
-                <p> Find resources for your first meetings, client communication, and establishing clear project expectations. </p>
-                <a href="starting.html">Explore Starting Resources</a> `;
-        }
-        else if (selectedStage === "ending") {
-            stageResult.innerHTML = `<h3>Ending the Experience</h3>
-                <p> Learn how to reflect on your experience, wrap up your project, and communicate the skills you've gained. </p>
-                <a href="ending.html">Explore Ending Resources</a> `;
-        }
-        else {
-            stageResult.innerHTML = `<p>Select an option above to see your recommendation.</p> `;
-        }
-    });
-    </script>
 </section>
 
 <section>
@@ -178,6 +150,13 @@
         document.getElementById("year").innerHTML = new Date().getFullYear();
         </script>
     </footer>
+
+    <script>
+      function changeBackground(color) {
+          document.querySelector("body").style.backgroundColor = color;
+      }
+  </script>
+
 </body>
 
 </html>
