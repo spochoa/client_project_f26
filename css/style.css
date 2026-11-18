@@ -112,9 +112,8 @@ main section {
   align-items: start;
 }
 
-main section > h2, main section > p, main section > img,
-main section > iframe, main section > ul, main section > ol,
-main section > section, main section > aside {
+main section > h2, main section > p, main section > img, main section > iframe, main section > ul, main section > ol, main section > section, 
+main section > aside {
   grid-column: 1 / -1;
 }
 
@@ -149,8 +148,7 @@ a:hover {
   background: #ffcb05;
 }
 
-a:focus,
-iframe:focus{
+a:focus, iframe:focus{
   outline: 2px solid #00274c;
   outline-offset: 2px;
   box-shadow: 0 0 0 1px #ffcb05;
@@ -164,8 +162,7 @@ iframe {
   aspect-ratio: 16 / 9;
 }
 
-main ul,
-main ol {
+main ul, main ol {
   padding-left: 24px;
 }
 
@@ -188,7 +185,7 @@ main section > ul:not(article ul) {
   padding: 20px;
 }
 
-  main section > ul:not(article ul) > li {
+main section > ul:not(article ul) > li {
   margin: 0;
   padding: 16px;
   border: 7px solid #ffcb05;
@@ -443,7 +440,7 @@ footer a:focus {
 }
 
 /* javascript part of project */
-.reading-preferences {
+.background-preference {
   background-color: #eef3f8;
   border-left: 5px solid #ffcb05;
   border-radius: 8px;
@@ -451,12 +448,12 @@ footer a:focus {
   margin-bottom: 24px;
 }
 
-.reading-preferences h2 {
+.background-preference h2 {
   font-size: 20px;
   margin-bottom: 8px;
 }
 
-.reading-preferences p {
+.background-preference p {
   font-size: 16px;
   margin-bottom: 12px;
 }
